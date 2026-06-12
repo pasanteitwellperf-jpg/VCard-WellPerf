@@ -1,0 +1,751 @@
+[
+  {
+    "item": "1",
+    "nombre": "AGUINDA CRIOLLO RONNY BRYAN",
+    "cedula": "2200233019",
+    "area": "Operaciones",
+    "cargo": "Operador de campo Jr",
+    "telefono": "991048268",
+    "email": "ronny.aguinda@wellperf.com"
+  },
+  {
+    "item": "2",
+    "nombre": "AGUINDA TANGUILA ROMULO FILIMON",
+    "cedula": "1500458003",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "996925404",
+    "email": "romulo.aguinda@wellperf.com"
+  },
+  {
+    "item": "3",
+    "nombre": "AGUINSACA ARMIJOS LUIS ENRIQUE",
+    "cedula": "1717096661",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo I",
+    "telefono": "995477347",
+    "email": "luis.aguinsaca@wellperf.com"
+  },
+  {
+    "item": "4",
+    "nombre": "ALMEIDA ALMEIDA MARLENE LORENZA",
+    "cedula": "1721567897",
+    "area": "Administrativo",
+    "cargo": "Asistente Administrativa y compras locales",
+    "telefono": "997327049",
+    "email": "marlene.almeida@wellperf.com"
+  },
+  {
+    "item": "5",
+    "nombre": "ARGOTI TRUJILLO SYLVIA MARGARITA",
+    "cedula": "1721908935",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo I",
+    "telefono": "995340691",
+    "email": "sylvia.argoti@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "6",
+    "nombre": "ARIAS GARCIA LUIS ALEXANDER",
+    "cedula": "1726662859",
+    "area": "Mantenimiento",
+    "cargo": "Ingeniero de Mantenimiento Jr",
+    "telefono": "960442409",
+    "email": "luis.arias@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "7",
+    "nombre": "ARMIJOS DEL HIERRO REINALDO DANIEL",
+    "cedula": "1715626329",
+    "area": "Gerencia",
+    "cargo": "Gerente General",
+    "telefono": "984620439",
+    "email": "reinaldo.armijos@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "8",
+    "nombre": "BAQUERO ARTEAGA GABRIELA MICHELLE",
+    "cedula": "1725793846",
+    "area": "Administrativo",
+    "cargo": "Coordinadora de Marketing",
+    "telefono": "960552723",
+    "email": "gabriela.baquero@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "9",
+    "nombre": "BRAVO ABAD ANGEL JOSUE",
+    "cedula": "2250114259",
+    "area": "Operaciones",
+    "cargo": "Operador de campo I",
+    "telefono": "",
+    "email": "angel.bravo@wellperf.com"
+  },
+  {
+    "item": "10",
+    "nombre": "CABRERA HERNANDEZ CARMEN CAROLINA",
+    "cedula": "605846161",
+    "area": "Administrativo",
+    "cargo": "Asist. QHSE",
+    "telefono": "979454741",
+    "email": "asistente_qhse@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "11",
+    "nombre": "CAIZA OÑA JOSE LIZARDO",
+    "cedula": "1715189617",
+    "area": "Mantenimiento",
+    "cargo": "Ingeniero de Mantenimiento III",
+    "telefono": "991678761",
+    "email": "jose.caiza@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "12",
+    "nombre": "CALVA CUEVA WILSON SANTIAGO",
+    "cedula": "1500415938",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo III",
+    "telefono": "993938262",
+    "email": "wilson.calva@wellperf.com"
+  },
+  {
+    "item": "13",
+    "nombre": "CAMPOS BARRES VICTOR ALFONSO",
+    "cedula": "1204352486",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "969451867",
+    "email": "victor.campos@wellperf.com"
+  },
+  {
+    "item": "14",
+    "nombre": "CANDO CHANCHICOCHA LUIS FERNANDO",
+    "cedula": "2100198460",
+    "area": "Operaciones",
+    "cargo": "Jefe de Base",
+    "telefono": "982773553",
+    "email": "perforating@wellperf.com"
+  },
+  {
+    "item": "15",
+    "nombre": "CARCHI SANCHEZ ANTONY ANDREI",
+    "cedula": "2200410567",
+    "area": "Operaciones",
+    "cargo": "Operador de campo Jr",
+    "telefono": "",
+    "email": "antony.carchi@wellperf.com"
+  },
+  {
+    "item": "16",
+    "nombre": "CARCHI TANDAZO RENE",
+    "cedula": "1712557113",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo III",
+    "telefono": "960263716",
+    "email": "rene.carchi@wellperf.com"
+  },
+  {
+    "item": "17",
+    "nombre": "CASTILLO SALINAS JENNIFER ANDREA",
+    "cedula": "2200403281",
+    "area": "Administrativo",
+    "cargo": "Asistente Administrativa",
+    "telefono": "939789369",
+    "email": "jeniffer.castillo@wellperf.com"
+  },
+  {
+    "item": "18",
+    "nombre": "CENTENO HENRIQUEZ FELIX JAVIER",
+    "cedula": "1757528805",
+    "area": "Operaciones",
+    "cargo": "Coordinador de Operaciones",
+    "telefono": "980167926",
+    "email": "felix.centeno@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "19",
+    "nombre": "CHANALUISA SALINAS HOLGER LEONARDO",
+    "cedula": "1500542145",
+    "area": "Mantenimiento",
+    "cargo": "Coordinador de Mantenimiento",
+    "telefono": "969783774",
+    "email": "maintenance@wellperf.com"
+  },
+  {
+    "item": "20",
+    "nombre": "CHICA BAZURTO RITTER ENNY",
+    "cedula": "1711217677",
+    "area": "Bodega",
+    "cargo": "Bodeguero",
+    "telefono": "996823363",
+    "email": "bodega@wellperf.com"
+  },
+  {
+    "item": "21",
+    "nombre": "CHIMBO VALLADOLID BYRON CRISTOBAL",
+    "cedula": "202004818",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo II",
+    "telefono": "989419559",
+    "email": "byron.chimbo@wellperf.com"
+  },
+  {
+    "item": "22",
+    "nombre": "CHIMBO VALLADOLID LUIS DAMIAN",
+    "cedula": "2200418792",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "",
+    "email": "damian.chimbo@wellperf.com"
+  },
+  {
+    "item": "23",
+    "nombre": "COLLAGUAZO ITAS ANTHONY EFRAIN",
+    "cedula": "1724935927",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo I",
+    "telefono": "998650331",
+    "email": "anthony.collaguazo@wellperf.com"
+  },
+  {
+    "item": "24",
+    "nombre": "CORREA PAREDES DOMENICA BELEN",
+    "cedula": "1721206843",
+    "area": "Administrativo",
+    "cargo": "SUPPLY CHAIN MANAGER",
+    "telefono": "983509679",
+    "email": "domenica.correa@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "25",
+    "nombre": "CUESTA JACOME FRANKLIN OMAR",
+    "cedula": "2100207634",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "993114627",
+    "email": "franklin.cuesta@wellperf.com"
+  },
+  {
+    "item": "26",
+    "nombre": "CUEVA GRANDA DANIEL ERNESTO",
+    "cedula": "1714523071",
+    "area": "Presidencia",
+    "cargo": "Presidente",
+    "telefono": "999909283",
+    "email": "daniel.cueva@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "27",
+    "nombre": "DAMACELA CEVALLOS JOSE ALEJANDRO",
+    "cedula": "1718484254",
+    "area": "Administrativo",
+    "cargo": "Contador General",
+    "telefono": "984950352",
+    "email": "alejandro.damacela@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "28",
+    "nombre": "DUQUE BARRAGAN WELLINGTON XAVIER",
+    "cedula": "2200380190",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "989576828",
+    "email": "wellington.duque@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "29",
+    "nombre": "ERAZO PARRA ANGIE MILENY",
+    "cedula": "2250036981",
+    "area": "Mantenimiento",
+    "cargo": "Técnico de Mantenimiento I",
+    "telefono": "968387351",
+    "email": "angie.erazo@wellperf.com"
+  },
+  {
+    "item": "30",
+    "nombre": "ERIQUE ENCARNACION WALTHER VINICIO",
+    "cedula": "1105045932",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "993458868",
+    "email": "Walther.erique@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "31",
+    "nombre": "FREIRE GUEVARA PATRICIO ALFONSO",
+    "cedula": "2200251268",
+    "area": "Operaciones",
+    "cargo": "Asistente de Operaciones",
+    "telefono": "980927458",
+    "email": "patricio.freire@wellperf.com"
+  },
+  {
+    "item": "32",
+    "nombre": "GARCES RAMOS DAYANA LIZETH",
+    "cedula": "1805273693",
+    "area": "Administrativo",
+    "cargo": "Comercial, soporte técnico y ventas",
+    "telefono": "959081185",
+    "email": "dayana.garces@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "33",
+    "nombre": "GUEVARA CARGUA JORGE ARMANDO",
+    "cedula": "604360115",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "",
+    "email": "jorge.guevara@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "34",
+    "nombre": "GUEVARA CARGUA LUIS ADOLFO",
+    "cedula": "602932824",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo III",
+    "telefono": "994167314",
+    "email": "luis.guevara@wellperf.com"
+  },
+  {
+    "item": "35",
+    "nombre": "HERNANDEZ REQUELME JEFFERSON DANIEL",
+    "cedula": "2200190508",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "997362416",
+    "email": "daniel.hernandez@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "36",
+    "nombre": "HERRERA SOASTI SANTIAGO MAURICIO",
+    "cedula": "1712477759",
+    "area": "Administrativo",
+    "cargo": "Gerente Comercial",
+    "telefono": "988831935",
+    "email": "mauricio.herrera@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "37",
+    "nombre": "LAPO SANCHEZ ROGER PATRICIO",
+    "cedula": "2200061634",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "978890754",
+    "email": "roger.lapo@wellperf.com"
+  },
+  {
+    "item": "38",
+    "nombre": "LLANO ESPIN JOEL ANDRES",
+    "cedula": "1600596439",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo Jr",
+    "telefono": "992870970",
+    "email": "andres.llano@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "39",
+    "nombre": "LLERENA CORNEJO DANIEL FERNANDO",
+    "cedula": "1725042491",
+    "area": "Bodega",
+    "cargo": "Asistente de Bodega",
+    "telefono": "978820375",
+    "email": "daniel.llerena@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "40",
+    "nombre": "LOPEZ FREIRE ALAN MATEO",
+    "cedula": "2200365324",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "997905975",
+    "email": "alan.lopez@wellperf.com"
+  },
+  {
+    "item": "41",
+    "nombre": "LOPEZ FREIRE STEVE ALEXANDER",
+    "cedula": "2200236277",
+    "area": "Operaciones",
+    "cargo": "Pasante",
+    "telefono": "996908404",
+    "email": "steve.lopez@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "42",
+    "nombre": "MALAVE BAUTE ALEXANDER JOSE",
+    "cedula": "1761116753",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo II",
+    "telefono": "",
+    "email": "alexander.malave@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "43",
+    "nombre": "MALLIQUINGA ROCHINA JONATHAN EFRAIN",
+    "cedula": "2101045595",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo Jr",
+    "telefono": "959007754",
+    "email": "jonathan.malliquinga@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "44",
+    "nombre": "MANTUANO CHAVARRIA MICHAEL JASMANI",
+    "cedula": "2200365324",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "980428012",
+    "email": ""
+  },
+  {
+    "item": "45",
+    "nombre": "MOREIRA CEDEÑO AYSHA NOHELIA",
+    "cedula": "1316287703",
+    "area": "Administrativo",
+    "cargo": "Asistente contable y administrativa",
+    "telefono": "964122938",
+    "email": "aysha.moreira@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "46",
+    "nombre": "MORENO LUDEÑA SANDRO RENE",
+    "cedula": "2200054712",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "939105577",
+    "email": "sandro.moreno@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "47",
+    "nombre": "MOSQUERA RODRIGUEZ VICENTE PAUL",
+    "cedula": "1721814828",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "982217803",
+    "email": "vicente.mosquera@wellperf.com"
+  },
+  {
+    "item": "48",
+    "nombre": "NICOLALDE VINUEZA DANIELA PAOLA",
+    "cedula": "1724422629",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo I",
+    "telefono": "995923875",
+    "email": "daniela.nicolalde@wellperf.com"
+  },
+  {
+    "item": "49",
+    "nombre": "ORTEGA CARRERA MADELINE MAYANI",
+    "cedula": "1003934070",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo I",
+    "telefono": "967581450",
+    "email": "madeline.ortega@wellperf.com"
+  },
+  {
+    "item": "50",
+    "nombre": "PACHITO BENNETT JUAN CARLOS",
+    "cedula": "802898171",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "987125141",
+    "email": "juan.pachito@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "51",
+    "nombre": "PIEDRA APOLO JULIO ALFREDO",
+    "cedula": "1718333014",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo I",
+    "telefono": "981530449",
+    "email": "julio.piedra@wellperf.com"
+  },
+  {
+    "item": "52",
+    "nombre": "PIEDRAHITA YUN ON DIEGO ARMANDO",
+    "cedula": "1205684010",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo II",
+    "telefono": "",
+    "email": "diego.piedrahita@wellperf.com"
+  },
+  {
+    "item": "53",
+    "nombre": "QUEZADA ERAZO EDGAR ANDRES",
+    "cedula": "2200154207",
+    "area": "Bodega",
+    "cargo": "Asistente Administrativo y Bodega",
+    "telefono": "983612366",
+    "email": "andres.quezada@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "54",
+    "nombre": "QUIROZ ROBLES JAIRO RAMIRO",
+    "cedula": "400737433",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo III",
+    "telefono": "981807148",
+    "email": "jairo.quiroz1@wellperf.com"
+  },
+  {
+    "item": "55",
+    "nombre": "QUISHPE GUTIERREZ KEVIN MAURICIO",
+    "cedula": "1727944660",
+    "area": "Mantenimiento",
+    "cargo": "Ingeniero de Mantenimiento Jr",
+    "telefono": "983326859",
+    "email": "mauricio.quishpe@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "56",
+    "nombre": "RIVERA COBA GABRIEL RICARDO",
+    "cedula": "1717816795",
+    "area": "Operaciones",
+    "cargo": "Gerente de Soporte Técnico",
+    "telefono": "995940821",
+    "email": "gabriel.rivera@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "57",
+    "nombre": "ROBAYO SANDOVAL DIEGO FERNANDO",
+    "cedula": "1718623331",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo III",
+    "telefono": "996412100",
+    "email": "diego.robayo@wellperf.com"
+  },
+  {
+    "item": "58",
+    "nombre": "ROJAS FUENTES EDGAR EDUARO",
+    "cedula": "BH502710",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo II",
+    "telefono": "3134799000",
+    "email": "eduardo.rojas@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "59",
+    "nombre": "ROJAS FUENTES ELBER FERNANDO",
+    "cedula": "BE014964",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo II",
+    "telefono": "3144271731",
+    "email": "fernando.rojas@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "60",
+    "nombre": "ROMERO FUENTES DEYVY XAVIER",
+    "cedula": "1713939302",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo II",
+    "telefono": "992455603",
+    "email": "xavier.romero@wellperf.com"
+  },
+  {
+    "item": "61",
+    "nombre": "ROMERO VIZUETE DANIEL GUILLERMO",
+    "cedula": "2100203005",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo II",
+    "telefono": "997886192",
+    "email": "daniel.romero@wellperf.com"
+  },
+  {
+    "item": "62",
+    "nombre": "ROSERO HERMOSA FABIAN ALESSANDRO",
+    "cedula": "1756032064",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo Jr ",
+    "telefono": "999246832",
+    "email": "fabian.rosero@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "63",
+    "nombre": "SALINAS TANDAZO WILMER PATRICIO",
+    "cedula": "1500507528",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo II",
+    "telefono": "959281122",
+    "email": "patricio.salinas@wellperf.com"
+  },
+  {
+    "item": "64",
+    "nombre": "SANCHEZ ALAVA YOFRE LEONIDAS",
+    "cedula": "2100374665",
+    "area": "Operaciones",
+    "cargo": "Operador de campo I",
+    "telefono": "962385732",
+    "email": "yofre.sanchez@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "65",
+    "nombre": "SANTANA CHICA JULIO CESAR",
+    "cedula": "2100200050",
+    "area": "Bodega",
+    "cargo": "Bodeguero",
+    "telefono": "969049558",
+    "email": "bodega_2@wellperf.com"
+  },
+  {
+    "item": "66",
+    "nombre": "TAPIA CADENA CHRISTIAN XAVIER",
+    "cedula": "502297237",
+    "area": "Operaciones",
+    "cargo": "Ingeniero de Campo III",
+    "telefono": "984008368",
+    "email": "christian.tapia@wellperf.com"
+  },
+  {
+    "item": "67",
+    "nombre": "TIBANTA MIRANDA ALEXANDER FRANCISCO",
+    "cedula": "1728220441",
+    "area": "Administrativo",
+    "cargo": "Soporte TI",
+    "telefono": "963397549",
+    "email": "pasante@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "68",
+    "nombre": "TOALA MACHOA ANGEL EDUARDO",
+    "cedula": "1500476187",
+    "area": "Administrativo",
+    "cargo": "Coordinador QHSE",
+    "telefono": "984434501",
+    "email": "calidad@wellperf.com"
+  },
+  {
+    "item": "69",
+    "nombre": "TORRES CALLE CRISTIAN DAVID",
+    "cedula": "2200132021",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "988772013",
+    "email": "cristian.torres@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "70",
+    "nombre": "TORRES FRANCO CAMILA MABELL",
+    "cedula": "1723595441",
+    "area": "Administrativo",
+    "cargo": "Arquitecta",
+    "telefono": "",
+    "email": ""
+  },
+  {
+    "item": "71",
+    "nombre": "TORRES PAREDES ANDRES FERNANDO",
+    "cedula": "2100198171",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo I",
+    "telefono": "983671420",
+    "email": "andres.torres@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "72",
+    "nombre": "UCHUARI ZAMBRANO MARCO ANTONIO",
+    "cedula": "2100677380",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo Jr",
+    "telefono": "999414833",
+    "email": "marco.uchuari@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "73",
+    "nombre": "VALDEZ CORTEZ WAGNER JAVIER",
+    "cedula": "2200081996",
+    "area": "Operaciones",
+    "cargo": "Operador de campo II",
+    "telefono": "985069871",
+    "email": "wagner.valdez@wellperf.com"
+  },
+  {
+    "item": "74",
+    "nombre": "VALLEJO SOLIS JORGE HUMBERTO",
+    "cedula": "200791861",
+    "area": "Administrativo",
+    "cargo": "Comercial, soporte técnico y ventas",
+    "telefono": "983177577",
+    "email": "jorge.vallejo@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "75",
+    "nombre": "VASQUEZ OLMEDO CRISTOPHER XAVIER",
+    "cedula": "1721586194",
+    "area": "Administrativo",
+    "cargo": "Comercial, soporte técnico y ventas",
+    "telefono": "987224612",
+    "email": "cristopher.vasquez@wellperf.com",
+    "photoBase64": null
+  },
+  {
+    "item": "76",
+    "nombre": "YANEZ MIGUEZ DANNY NAPOLEON",
+    "cedula": "2100547112",
+    "area": "Operaciones",
+    "cargo": "Operador de Campo III",
+    "telefono": "996583845",
+    "email": "danny.yanez@wellperf.com"
+  },
+  {
+    "item": "77",
+    "nombre": "YUMISEBA ESTRADA CARLA MARIA",
+    "cedula": "604935338",
+    "area": "Mantenimiento",
+    "cargo": "Ingeniero de Mantenimiento I",
+    "telefono": "984659322",
+    "email": "carla.yumiseba@wellperf.com"
+  },
+  {
+    "item": "78",
+    "nombre": "ORTEGA PATIÑO CINTYA NAYELLY",
+    "cedula": "1750692216",
+    "area": "Operaciones",
+    "cargo": "Pasante",
+    "telefono": "967386151",
+    "email": "pasante_operaciones@wellperf.com"
+  },
+  {
+    "item": "79",
+    "nombre": "SALAZAR ESTRELLA KEVIN ANDRES",
+    "cedula": "1756070759",
+    "area": "Supply  Chain",
+    "cargo": "Pasante",
+    "telefono": "995367152",
+    "email": "pasante.supply@wellperf.com",
+    "photoBase64": null
+  }
+]
