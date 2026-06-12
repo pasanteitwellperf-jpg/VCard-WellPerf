@@ -1,8 +1,7 @@
 import React from "react";
 import AnimatedButton from "@/components/AnimatedButton";
 import ProfileImage from "@/components/ProfileImage";
-import fs from "fs";
-import path from "path";
+import { sql } from "@vercel/postgres";
 
 // Configuración de vCard V3
 function generateVCard(profile: any) {
@@ -21,18 +20,10 @@ END:VCARD`;
 
 export default async function ProfilePage({ params }: { params: Promise<{ cedula: string }> }) {
   const { cedula } = await params;
-  
-  // Leemos el archivo siempre en vivo para evitar cachés del servidor y mostrar las actualizaciones al instante
-  const filePath = path.join(process.cwd(), 'src/data/employees.json');
-  const fileData = fs.readFileSync(filePath, 'utf8');
-  const employeesData = JSON.parse(fileData);
+  // Consulta directa a Vercel Postgres
+  const { rows } = await sql`SELECT * FROM employees WHERE cedula = ${cedula}`;
 
-  // Buscar el empleado instantáneamente
-  const employee = employeesData.find(
-    (emp: any) => String(emp.cedula) === String(cedula)
-  );
-
-  if (!employee) {
+  if (rows.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-[#e2e8f0]">
         <div className="bg-white p-8 rounded-3xl shadow-xl max-w-sm text-center">
@@ -42,11 +33,12 @@ export default async function ProfilePage({ params }: { params: Promise<{ cedula
       </div>
     );
   }
+  const employee = rows[0];
 
   const profileData = {
     fullName: employee.nombre,
     jobTitle: employee.cargo || "Empleado",
-    photoUrl: `/fotos/${employee.nombre}.png`,
+    photoUrl: employee.photo_url || `/fotos/${employee.nombre}.png`,
     address: employee.area || "Oficinas WellPerf",
     phone: employee.telefono || "No registrado",
     email: employee.email || "contacto@wellperf.com",

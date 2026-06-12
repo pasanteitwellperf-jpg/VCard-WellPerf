@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { sql } from '@vercel/postgres';
 
 // Configuración de vCard V3 con retornos de carro estrictos (CRLF) obligatorios para iOS/Android
 function generateVCard(profile: any) {
@@ -30,17 +29,13 @@ export async function GET(request: Request, { params }: { params: Promise<{ cedu
   const resolvedParams = await params;
   const cedula = resolvedParams.cedula.replace('.vcf', '');
   
-  // Lectura dinámica para evitar el caché del servidor y garantizar datos frescos
-  const filePath = path.join(process.cwd(), 'src/data/employees.json');
-  const employeesData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  // Lectura desde Postgres
+  const { rows } = await sql`SELECT * FROM employees WHERE cedula = ${cedula}`;
 
-  const employee = employeesData.find(
-    (emp: any) => String(emp.cedula) === String(cedula)
-  );
-
-  if (!employee) {
+  if (rows.length === 0) {
     return new NextResponse('Employee not found', { status: 404 });
   }
+  const employee = rows[0];
 
   // Dividir nombres y apellidos
   const nameParts = employee.nombre.split(" ");
@@ -74,16 +69,16 @@ export async function GET(request: Request, { params }: { params: Promise<{ cedu
     ? "Allure park, Av. de los Shyris y Suecia, 170303 Quito"
     : "Via a nuevo paraiso S/N y NA A 280 metros de la via a Lago Agrio, CAB. Union Chimborazo, 220206 Francisco de Orellana";
 
-  // Intentar cargar la foto
+  // Intentar cargar la foto desde Vercel Blob
   let photoBase64 = null;
-  try {
-    const photoPath = path.join(process.cwd(), 'public', 'fotos', `${employee.nombre}.png`);
-    if (fs.existsSync(photoPath)) {
-      const fileData = fs.readFileSync(photoPath);
-      photoBase64 = fileData.toString('base64');
+  if (employee.photo_url) {
+    try {
+      const res = await fetch(employee.photo_url);
+      const arrayBuffer = await res.arrayBuffer();
+      photoBase64 = Buffer.from(arrayBuffer).toString('base64');
+    } catch (e) {
+      console.error("No se pudo cargar la foto para", employee.nombre);
     }
-  } catch (e) {
-    console.error("No se pudo cargar la foto para", employee.nombre);
   }
 
   const profileData = {
