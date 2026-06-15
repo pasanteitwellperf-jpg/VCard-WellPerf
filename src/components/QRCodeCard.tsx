@@ -16,7 +16,6 @@ export default function QRCodeCard({ url }: QRCodeCardProps) {
       <div className="p-4 bg-white rounded-xl border-2 border-orange-100 flex items-center justify-center">
         
         <div className="relative inline-flex items-center justify-center">
-          {/* QR Code base */}
           <QRCodeSVG
             value={url}
             size={256}
@@ -24,16 +23,13 @@ export default function QRCodeCard({ url }: QRCodeCardProps) {
             fgColor={"#000000"}
             level={"H"} // Highest error correction
             includeMargin={false}
+            imageSettings={{
+              src: "/LOGOWPNARANJA.png",
+              height: 48,
+              width: 112,
+              excavate: true,
+            }}
           />
-          
-          {/* Cajas blancas con formato rectangular estricto y logo más grande */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1.5 flex items-center justify-center">
-            <img 
-              src="/LOGOWPNARANJA.png" 
-              alt="Logo WP" 
-              className="w-28 h-12 object-contain scale-110" 
-            />
-          </div>
         </div>
 
       </div>

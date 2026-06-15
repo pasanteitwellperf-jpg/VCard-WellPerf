@@ -269,10 +269,13 @@ export default function AdminPage() {
                                 fgColor={"#000000"}
                                 level={"H"}
                                 includeMargin={false}
+                                imageSettings={{
+                                  src: "/logo_naranja.png",
+                                  height: 24,
+                                  width: 56,
+                                  excavate: true,
+                                }}
                               />
-                              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-2 py-1 flex items-center justify-center">
-                                <img src="/logo_naranja.png" alt="Logo WP" className="w-14 h-6 object-contain scale-110" />
-                              </div>
                             </div>
                           ) : (
                             <div className="w-[120px] h-[120px] bg-slate-100 flex items-center justify-center text-slate-400 text-xs text-center px-2">No disponible</div>
