@@ -96,8 +96,8 @@ export default function AdminPage() {
     if (!element) return;
 
     try {
-      const canvas = await html2canvas(element, { backgroundColor: '#ffffff', scale: 2 });
-      const dataUrl = canvas.toDataURL('image/png');
+      const canvas = await html2canvas(element, { backgroundColor: '#ffffff', scale: 5 });
+      const dataUrl = canvas.toDataURL('image/png', 1.0);
       const link = document.createElement('a');
       link.download = `${type}_${cedula}.png`;
       link.href = dataUrl;
@@ -269,13 +269,10 @@ export default function AdminPage() {
                                 fgColor={"#000000"}
                                 level={"H"}
                                 includeMargin={false}
-                                imageSettings={{
-                                  src: "/logo_naranja.png",
-                                  height: 24,
-                                  width: 56,
-                                  excavate: true,
-                                }}
                               />
+                              <div className="absolute inset-0 m-auto bg-white flex items-center justify-center" style={{ width: 64, height: 24 }}>
+                                <img src="/logo_naranja.png" alt="Logo WP" style={{ width: 56, height: "auto", display: "block" }} />
+                              </div>
                             </div>
                           ) : (
                             <div className="w-[120px] h-[120px] bg-slate-100 flex items-center justify-center text-slate-400 text-xs text-center px-2">No disponible</div>

@@ -23,13 +23,15 @@ export default function QRCodeCard({ url }: QRCodeCardProps) {
             fgColor={"#000000"}
             level={"H"} // Highest error correction
             includeMargin={false}
-            imageSettings={{
-              src: "/LOGOWPNARANJA.png",
-              height: 48,
-              width: 112,
-              excavate: true,
-            }}
           />
+          {/* Cajas blancas con formato rectangular estricto y logo más grande */}
+          <div className="absolute inset-0 m-auto bg-white flex items-center justify-center" style={{ width: 100, height: 38 }}>
+            <img 
+              src="/LOGOWPNARANJA.png" 
+              alt="Logo WP" 
+              style={{ width: 85, height: "auto", display: "block" }}
+            />
+          </div>
         </div>
 
       </div>
