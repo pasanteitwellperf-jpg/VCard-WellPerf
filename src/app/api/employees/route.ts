@@ -23,26 +23,29 @@ export async function POST(request: Request) {
       }
     }
 
-    // Actualizar la base de datos Postgres
-    // Si tenemos photoUrl la actualizamos, si no, dejamos la que estaba
+    // Actualizar o Insertar la base de datos Postgres (UPSERT)
     if (photoUrl) {
       await sql`
-        UPDATE employees 
-        SET 
-          telefono = ${updatedEmployee.telefono}, 
-          email = ${updatedEmployee.email}, 
-          cargo = ${updatedEmployee.cargo},
-          photo_url = ${photoUrl}
-        WHERE cedula = ${updatedEmployee.cedula}
+        INSERT INTO employees (cedula, nombre, area, cargo, telefono, email, photo_url)
+        VALUES (${updatedEmployee.cedula}, ${updatedEmployee.nombre}, ${updatedEmployee.area}, ${updatedEmployee.cargo}, ${updatedEmployee.telefono}, ${updatedEmployee.email}, ${photoUrl})
+        ON CONFLICT (cedula) DO UPDATE SET 
+          nombre = EXCLUDED.nombre,
+          area = EXCLUDED.area,
+          cargo = EXCLUDED.cargo,
+          telefono = EXCLUDED.telefono,
+          email = EXCLUDED.email,
+          photo_url = EXCLUDED.photo_url
       `;
     } else {
       await sql`
-        UPDATE employees 
-        SET 
-          telefono = ${updatedEmployee.telefono}, 
-          email = ${updatedEmployee.email}, 
-          cargo = ${updatedEmployee.cargo}
-        WHERE cedula = ${updatedEmployee.cedula}
+        INSERT INTO employees (cedula, nombre, area, cargo, telefono, email)
+        VALUES (${updatedEmployee.cedula}, ${updatedEmployee.nombre}, ${updatedEmployee.area}, ${updatedEmployee.cargo}, ${updatedEmployee.telefono}, ${updatedEmployee.email})
+        ON CONFLICT (cedula) DO UPDATE SET 
+          nombre = EXCLUDED.nombre,
+          area = EXCLUDED.area,
+          cargo = EXCLUDED.cargo,
+          telefono = EXCLUDED.telefono,
+          email = EXCLUDED.email
       `;
     }
 

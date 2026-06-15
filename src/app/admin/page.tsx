@@ -24,6 +24,7 @@ export default function AdminPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<Partial<Employee>>({});
   const [newPhotoBase64, setNewPhotoBase64] = useState<string | null>(null);
+  const [isAddingNew, setIsAddingNew] = useState(false);
 
   const getMissingFields = (emp: Employee) => {
     const missing = [];
@@ -43,12 +44,29 @@ export default function AdminPage() {
     setEditingId(emp.cedula);
     setEditForm({ ...emp });
     setNewPhotoBase64(null);
+    setIsAddingNew(false);
   };
 
   const handleCancelEdit = () => {
     setEditingId(null);
     setEditForm({});
     setNewPhotoBase64(null);
+    setIsAddingNew(false);
+  };
+
+  const handleAddNew = () => {
+    setEditingId(null);
+    setEditForm({
+      item: (employees.length + 1).toString(),
+      nombre: '',
+      cedula: '',
+      area: '',
+      cargo: '',
+      telefono: '',
+      email: ''
+    });
+    setNewPhotoBase64(null);
+    setIsAddingNew(true);
   };
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,7 +96,12 @@ export default function AdminPage() {
       });
 
       if (response.ok) {
-        setEmployees(employees.map(emp => emp.cedula === cedula ? { ...emp, ...editForm } as Employee : emp));
+        if (isAddingNew) {
+          setEmployees([{ ...editForm } as Employee, ...employees]);
+          setIsAddingNew(false);
+        } else {
+          setEmployees(employees.map(emp => emp.cedula === cedula ? { ...emp, ...editForm } as Employee : emp));
+        }
         setEditingId(null);
         setNewPhotoBase64(null);
       } else {
@@ -115,17 +138,102 @@ export default function AdminPage() {
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight text-center md:text-left">Panel de Administración</h1>
             <p className="mt-2 text-lg text-gray-600 text-center md:text-left">Gestiona las credenciales y descarga los códigos de acceso.</p>
           </div>
-          <div className="mt-4 md:mt-0 bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-            <span className="flex h-3 w-3 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-            <span className="text-sm font-medium text-gray-700">{employees.length} Empleados Activos</span>
+          <div className="mt-4 md:mt-0 flex gap-4 items-center">
+            <button 
+              onClick={handleAddNew}
+              className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-xl shadow-sm transition-colors"
+            >
+              + Nuevo Empleado
+            </button>
+            <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
+              <span className="flex h-3 w-3 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </span>
+              <span className="text-sm font-medium text-gray-700">{employees.length} Empleados</span>
+            </div>
           </div>
         </div>
         
         {/* Cambiamos el grid para que en modo de edición se vea mejor y en normal sea de 1 columna larga o grid */}
         <div className="flex flex-col gap-8">
+          
+          {/* Formulario de Nuevo Empleado */}
+          {isAddingNew && (
+            <div className="bg-white rounded-3xl shadow-2xl ring-2 ring-orange-500 overflow-hidden flex flex-col transition-all duration-300">
+              <div className="flex flex-col lg:flex-row">
+                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-8 flex flex-col items-center justify-center lg:w-1/3 relative">
+                  <div className="absolute top-4 right-4 flex gap-2">
+                     <button onClick={() => handleSave(editForm.cedula || '')} className="bg-white text-orange-600 hover:bg-green-50 px-4 py-2 rounded-full font-bold shadow-md transition-colors flex items-center gap-2">
+                       <Save size={18} /> Crear
+                     </button>
+                     <button onClick={handleCancelEdit} className="bg-black/20 text-white hover:bg-black/30 p-2 rounded-full transition-colors" title="Cancelar">
+                       <X size={18} />
+                     </button>
+                  </div>
+                  
+                  <div className="relative group mb-6 mt-8">
+                    <img 
+                      src={newPhotoBase64 || `https://ui-avatars.com/api/?name=${encodeURIComponent(editForm.nombre || 'Nuevo')}&background=ffffff&color=ea580c&size=256`} 
+                      alt="Nuevo Empleado"
+                      className="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover bg-white"
+                    />
+                    <label className="absolute inset-0 bg-black/50 text-white flex flex-col items-center justify-center rounded-full opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity">
+                      <Upload size={24} className="mb-1" />
+                      <span className="text-xs font-bold">Subir Foto</span>
+                      <input type="file" accept="image/*" className="hidden" onChange={handlePhotoUpload} />
+                    </label>
+                  </div>
+                  
+                  <div className="w-full space-y-3">
+                    <div>
+                      <label className="text-orange-100 text-xs font-bold uppercase mb-1 block">Nombre Completo</label>
+                      <input 
+                        type="text" 
+                        value={editForm.nombre || ''} 
+                        onChange={(e) => setEditForm({...editForm, nombre: e.target.value})}
+                        className="bg-white border-0 rounded-lg px-3 py-2 text-gray-900 font-bold w-full focus:ring-2 focus:ring-white shadow-inner"
+                        placeholder="Ej. Juan Pérez"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-orange-100 text-xs font-bold uppercase mb-1 block">Cargo</label>
+                      <input 
+                        type="text" 
+                        value={editForm.cargo || ''} 
+                        onChange={(e) => setEditForm({...editForm, cargo: e.target.value})}
+                        className="bg-white border-0 rounded-lg px-3 py-2 text-gray-900 font-medium w-full focus:ring-2 focus:ring-white shadow-inner"
+                        placeholder="Ej. Desarrollador"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Información de Contacto</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Cédula</label>
+                      <input type="text" value={editForm.cedula || ''} onChange={(e) => setEditForm({...editForm, cedula: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Teléfono</label>
+                      <input type="text" value={editForm.telefono || ''} onChange={(e) => setEditForm({...editForm, telefono: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Área (Texto Lateral Izquierdo)</label>
+                      <input type="text" value={editForm.area || ''} onChange={(e) => setEditForm({...editForm, area: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Ej. Operaciones" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Email</label>
+                      <input type="email" value={editForm.email || ''} onChange={(e) => setEditForm({...editForm, email: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {employees.map((emp, index) => {
             const vCardUrl = `${baseUrl}/${emp.cedula}`;
             const isEditing = editingId === emp.cedula;
@@ -196,8 +304,8 @@ export default function AdminPage() {
                           <input type="text" value={editForm.telefono || ''} onChange={(e) => setEditForm({...editForm, telefono: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Área</label>
-                          <input type="text" value={editForm.area || ''} onChange={(e) => setEditForm({...editForm, area: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                          <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Área (Texto Lateral Izquierdo)</label>
+                          <input type="text" value={editForm.area || ''} onChange={(e) => setEditForm({...editForm, area: e.target.value})} className="w-full bg-slate-50 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Ej. Operaciones" />
                         </div>
                         <div>
                           <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Email</label>
