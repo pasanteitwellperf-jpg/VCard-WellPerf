@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Barcode from "react-barcode";
 import { QRCodeSVG } from "qrcode.react";
-import { Edit2, Save, X, Download, ImageIcon, Upload } from "lucide-react";
+import { Edit2, Save, X, Download, ImageIcon, Upload, Trash2 } from "lucide-react";
 import html2canvas from "html2canvas";
 
 
@@ -127,6 +127,32 @@ export default function AdminPage() {
     } catch (error) {
       console.error("Error saving:", error);
       alert("Error de conexión al guardar");
+    }
+  };
+
+  const handleDelete = async (cedula: string) => {
+    if (!window.confirm(`¿Seguro que deseas eliminar al empleado con cédula ${cedula}? Esta acción no se puede deshacer.`)) {
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/employees', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cedula }),
+      });
+
+      if (response.ok) {
+        setEmployees(employees.filter(emp => emp.cedula !== cedula));
+        setEditingId(null);
+      } else {
+        alert("Error al eliminar los datos");
+      }
+    } catch (error) {
+      console.error("Error deleting:", error);
+      alert("Error de conexión al eliminar");
     }
   };
 
@@ -360,9 +386,14 @@ export default function AdminPage() {
                           )}
                         </div>
                       </div>
-                      <button onClick={() => handleEditClick(emp)} className="p-2 text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-colors ml-4 shrink-0" title="Editar Datos">
-                        <Edit2 size={16} />
-                      </button>
+                      <div className="flex flex-col gap-2 ml-4 shrink-0">
+                        <button onClick={() => handleEditClick(emp)} className="p-2 text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-colors" title="Editar Datos">
+                          <Edit2 size={16} />
+                        </button>
+                        <button onClick={() => handleDelete(emp.cedula)} className="p-2 text-white bg-red-500/80 hover:bg-red-600 backdrop-blur-sm rounded-lg transition-colors" title="Eliminar Empleado">
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
                     </div>
 
                     <div className="p-6 flex-1 flex flex-col md:flex-row items-center gap-8 justify-center bg-white">

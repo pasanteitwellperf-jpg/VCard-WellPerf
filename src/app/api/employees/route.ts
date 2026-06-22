@@ -66,3 +66,19 @@ export async function GET() {
     return NextResponse.json({ success: false, message: 'Error interno del servidor' }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { cedula } = await request.json();
+    if (!cedula) {
+      return NextResponse.json({ success: false, message: 'Cédula es requerida' }, { status: 400 });
+    }
+
+    await sql`DELETE FROM employees WHERE cedula = ${cedula}`;
+
+    return NextResponse.json({ success: true, message: 'Empleado eliminado' });
+  } catch (error) {
+    console.error('Error deleting employee:', error);
+    return NextResponse.json({ success: false, message: 'Error interno del servidor' }, { status: 500 });
+  }
+}
