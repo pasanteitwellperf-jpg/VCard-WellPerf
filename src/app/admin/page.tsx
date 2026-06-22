@@ -6,7 +6,6 @@ import { QRCodeSVG } from "qrcode.react";
 import { Edit2, Save, X, Download, ImageIcon, Upload } from "lucide-react";
 import html2canvas from "html2canvas";
 
-import initialEmployeesData from "@/data/employees.json";
 
 interface Employee {
   item: string;
@@ -19,7 +18,8 @@ interface Employee {
 }
 
 export default function AdminPage() {
-  const [employees, setEmployees] = useState<Employee[]>(initialEmployeesData as Employee[]);
+  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [baseUrl, setBaseUrl] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<Partial<Employee>>({});
@@ -38,6 +38,23 @@ export default function AdminPage() {
 
   useEffect(() => {
     setBaseUrl(window.location.origin);
+    
+    // Fetch live data from Vercel Postgres
+    const fetchEmployees = async () => {
+      try {
+        const res = await fetch('/api/employees');
+        if (res.ok) {
+          const data = await res.json();
+          setEmployees(data);
+        }
+      } catch (err) {
+        console.error("Error fetching employees:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchEmployees();
   }, []);
 
   const handleEditClick = (emp: Employee) => {
@@ -157,6 +174,12 @@ export default function AdminPage() {
         
         {/* Cambiamos el grid para que en modo de edición se vea mejor y en normal sea de 1 columna larga o grid */}
         <div className="flex flex-col gap-8">
+          
+          {isLoading && (
+            <div className="text-center py-10 text-gray-500 font-semibold animate-pulse">
+              Cargando base de datos en vivo...
+            </div>
+          )}
           
           {/* Formulario de Nuevo Empleado */}
           {isAddingNew && (
