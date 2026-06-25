@@ -18,6 +18,7 @@ async function run() {
   await client.connect();
   
   // Borrar los duplicados erroneos que no tienen foto
+  //test
   await client.query("DELETE FROM employees WHERE cedula = '0704935338' OR cedula = '0604935338'");
   
   // Actualizar la cédula del original que sí tiene foto para agregarle el cero
