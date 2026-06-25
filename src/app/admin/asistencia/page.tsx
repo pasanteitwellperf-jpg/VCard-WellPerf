@@ -130,27 +130,27 @@ export default function AdminDashboardAsistencia() {
       {/* NavBar */}
       <nav className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex flex-col md:flex-row justify-between items-center h-auto md:h-16 py-4 gap-4">
             <div className="flex items-center gap-3">
               <img src="/logo_naranja.png" alt="WellPerf Logo" className="h-8 object-contain" />
-              <span className="text-xl font-bold" style={{ color: '#D35C24' }}>Panel de Asistencia</span>
+              <span className="text-xl font-bold text-center" style={{ color: '#D35C24' }}>Panel de Asistencia</span>
             </div>
-            <div className="flex items-center gap-4">
-              <Link href="/admin" className="flex items-center gap-2 text-[#D35C24] font-semibold hover:bg-orange-50 px-4 py-2 rounded-xl transition-colors border border-orange-200">
-                <ArrowLeft size={16} /> Volver al Inicio
+            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 w-full md:w-auto">
+              <Link href="/admin" className="flex items-center justify-center gap-2 text-[#D35C24] font-semibold hover:bg-orange-50 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-colors border border-orange-200 flex-1 md:flex-none text-sm md:text-base">
+                <ArrowLeft size={16} /> <span className="hidden sm:inline">Volver al Inicio</span><span className="sm:hidden">Inicio</span>
               </Link>
               <button
                 onClick={() => setShowNewMeetingModal(true)}
-                className="flex items-center text-white px-4 py-2 rounded-lg hover:opacity-90 font-medium transition-colors"
+                className="flex items-center justify-center text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:opacity-90 font-medium transition-colors flex-1 md:flex-none text-sm md:text-base"
                 style={{ backgroundColor: '#D35C24' }}
               >
-                <Plus className="h-5 w-5 mr-1" /> Nueva Reunión
+                <Plus className="h-5 w-5 md:mr-1" /> <span className="hidden sm:inline">Nueva Reunión</span><span className="sm:hidden">Nueva</span>
               </button>
               <button
                 onClick={handleLogout}
-                className="flex items-center text-gray-500 hover:text-gray-700 font-medium"
+                className="flex items-center justify-center text-gray-500 hover:text-gray-700 font-medium px-2 py-2"
               >
-                <LogOut className="h-5 w-5 mr-1" /> Salir
+                <LogOut className="h-5 w-5 md:mr-1" /> <span className="hidden sm:inline">Salir</span>
               </button>
             </div>
           </div>

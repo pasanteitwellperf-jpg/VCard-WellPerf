@@ -33,7 +33,7 @@ export default function AdminLogin() {
       const data = await res.json();
 
       if (res.ok) {
-        router.push('/admin/asistencia');
+        router.push('/admin');
         router.refresh(); 
       } else {
         setError(data.error || 'Error al iniciar sesión');
