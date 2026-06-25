@@ -1,6 +1,0 @@
-TENANT_ID=a6063a3e-b911-4ae7-896c-427f517cc7d5
-CLIENT_ID=921067ae-d500-4606-9213-16ca4211565b
-CLIENT_SECRET=R_E8Q~7n3wR6eJjE2VY4TxUyTP.KHRj3ZcBVqdah
-SHAREPOINT_HOSTNAME=wellperf.sharepoint.com
-
-https://wellperf.sharepoint.com/sites/PowerAppsWP/Lists/Registro%20de%20Asistencia/AllItems.aspx?npsAction=createList
