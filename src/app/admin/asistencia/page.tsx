@@ -252,7 +252,13 @@ export default function AdminDashboardAsistencia() {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                               {asistente.signature_url ? (
-                                <a href={asistente.signature_url} target="_blank" rel="noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">Ver Firma</a>
+                                <div className="h-12 w-24 bg-white rounded border border-gray-200 overflow-hidden flex items-center justify-center">
+                                  <img 
+                                    src={asistente.signature_url} 
+                                    alt="Firma" 
+                                    className="max-h-full max-w-full object-contain"
+                                  />
+                                </div>
                               ) : (
                                 <span className="text-gray-400">Sin firma</span>
                               )}
