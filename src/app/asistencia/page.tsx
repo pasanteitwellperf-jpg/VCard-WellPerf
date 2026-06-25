@@ -118,15 +118,17 @@ function AsistenciaForm() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Nombres</label>
+              <label htmlFor="nombres" className="block text-sm font-medium text-gray-700 mb-1">Nombres</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <User className="h-5 w-5 text-gray-400" />
                 </div>
                 <input
+                  id="nombres"
                   type="text"
                   name="nombres"
                   required
+                  autoComplete="given-name"
                   value={formData.nombres}
                   onChange={handleChange}
                   className="pl-10 block w-full rounded-xl border border-gray-300 py-3 text-gray-900 focus:ring-2 focus:ring-[#D35C24] focus:border-[#D35C24] outline-none transition-all"
@@ -135,15 +137,17 @@ function AsistenciaForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Apellidos</label>
+              <label htmlFor="apellidos" className="block text-sm font-medium text-gray-700 mb-1">Apellidos</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <User className="h-5 w-5 text-gray-400" />
                 </div>
                 <input
+                  id="apellidos"
                   type="text"
                   name="apellidos"
                   required
+                  autoComplete="family-name"
                   value={formData.apellidos}
                   onChange={handleChange}
                   className="pl-10 block w-full rounded-xl border border-gray-300 py-3 text-gray-900 focus:ring-2 focus:ring-[#D35C24] focus:border-[#D35C24] outline-none transition-all"
@@ -152,15 +156,17 @@ function AsistenciaForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Cédula</label>
+              <label htmlFor="cedula" className="block text-sm font-medium text-gray-700 mb-1">Cédula</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <CreditCard className="h-5 w-5 text-gray-400" />
                 </div>
                 <input
+                  id="cedula"
                   type="text"
                   name="cedula"
                   required
+                  autoComplete="off"
                   value={formData.cedula}
                   onChange={handleChange}
                   className="pl-10 block w-full rounded-xl border border-gray-300 py-3 text-gray-900 focus:ring-2 focus:ring-[#D35C24] focus:border-[#D35C24] outline-none transition-all"
@@ -169,15 +175,17 @@ function AsistenciaForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
+              <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Building2 className="h-5 w-5 text-gray-400" />
                 </div>
                 <input
+                  id="empresa"
                   type="text"
                   name="empresa"
                   required
+                  autoComplete="organization"
                   value={formData.empresa}
                   onChange={handleChange}
                   className="pl-10 block w-full rounded-xl border border-gray-300 py-3 text-gray-900 focus:ring-2 focus:ring-[#D35C24] focus:border-[#D35C24] outline-none transition-all"

@@ -137,7 +137,7 @@ export default function AdminDashboardAsistencia() {
             </div>
             <div className="flex items-center gap-4">
               <Link href="/admin" className="flex items-center gap-2 text-[#D35C24] font-semibold hover:bg-orange-50 px-4 py-2 rounded-xl transition-colors border border-orange-200">
-                <ArrowLeft size={16} /> Volver a VCards
+                <ArrowLeft size={16} /> Volver al Inicio
               </Link>
               <button
                 onClick={() => setShowNewMeetingModal(true)}
