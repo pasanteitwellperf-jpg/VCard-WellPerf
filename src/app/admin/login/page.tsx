@@ -75,7 +75,7 @@ export default function AdminLogin() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@wellperf.com"
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 outline-none transition-all focus:border-[#D35C24] focus:ring-[#D35C24]"
+                className="block w-full pl-10 pr-3 py-2 text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 outline-none transition-all focus:border-[#D35C24] focus:ring-[#D35C24]"
               />
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function AdminLogin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 outline-none transition-all focus:border-[#D35C24] focus:ring-[#D35C24]"
+                className="block w-full pl-10 pr-3 py-2 text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-2 outline-none transition-all focus:border-[#D35C24] focus:ring-[#D35C24]"
               />
             </div>
           </div>
