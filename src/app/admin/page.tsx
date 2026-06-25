@@ -3,8 +3,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import Barcode from "react-barcode";
 import { QRCodeSVG } from "qrcode.react";
-import { Edit2, Save, X, Download, ImageIcon, Upload, Trash2 } from "lucide-react";
+import { Edit2, Save, X, Download, ImageIcon, Upload, Trash2, ArrowRight } from "lucide-react";
 import html2canvas from "html2canvas";
+import Link from "next/link";
 
 
 interface Employee {
@@ -181,10 +182,13 @@ export default function AdminPage() {
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight text-center md:text-left">Panel de Administración</h1>
             <p className="mt-2 text-lg text-gray-600 text-center md:text-left">Gestiona las credenciales y descarga los códigos de acceso.</p>
           </div>
-          <div className="mt-4 md:mt-0 flex gap-4 items-center">
+          <div className="mt-4 md:mt-0 flex flex-wrap gap-4 items-center">
+            <Link href="/admin/asistencia" className="flex items-center gap-2 bg-orange-50 text-[#D35C24] hover:bg-orange-100 font-bold py-2 px-4 rounded-xl shadow-sm transition-colors border border-orange-200">
+              Ir a Panel de Asistencias <ArrowRight size={16} />
+            </Link>
             <button 
               onClick={handleAddNew}
-              className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-xl shadow-sm transition-colors"
+              className="bg-[#D35C24] hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-xl shadow-sm transition-colors"
             >
               + Nuevo Empleado
             </button>

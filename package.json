@@ -10,16 +10,20 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
     "@vercel/blob": "^2.4.0",
     "@vercel/postgres": "^0.10.0",
+    "bcryptjs": "^3.0.3",
     "gsap": "^3.15.0",
     "html2canvas": "^1.4.1",
+    "jose": "^6.2.3",
     "lucide-react": "^1.17.0",
     "next": "16.2.9",
     "qrcode.react": "^4.2.0",
     "react": "19.2.4",
     "react-barcode": "^1.6.1",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-signature-canvas": "^1.1.0-alpha.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

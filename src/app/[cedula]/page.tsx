@@ -2,6 +2,27 @@ import React from "react";
 import AnimatedButton from "@/components/AnimatedButton";
 import ProfileImage from "@/components/ProfileImage";
 import { sql } from "@vercel/postgres";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ cedula: string }> }): Promise<Metadata> {
+  const { cedula } = await params;
+  try {
+    const { rows } = await sql`SELECT nombre, cargo FROM employees WHERE cedula = ${cedula}`;
+    if (rows.length > 0) {
+      const emp = rows[0];
+      return {
+        title: `${emp.nombre} - VCard | WellPerf`,
+        description: `Tarjeta de presentación digital de ${emp.nombre}, ${emp.cargo || 'Empleado'} en WellPerf.`,
+      };
+    }
+  } catch (error) {
+    console.error(error);
+  }
+
+  return {
+    title: "VCard no encontrada | WellPerf",
+  };
+}
 
 // Configuración de vCard V3
 function generateVCard(profile: any) {
@@ -33,6 +54,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ cedula
       </div>
     );
   }
+  
   const employee = rows[0];
 
   const profileData = {
